@@ -1,4 +1,4 @@
-POST http://localhost:3000/proprietarios
+POST http://localhost:3000/proprietario
 Content-Type: application/json
 
 {
@@ -8,7 +8,7 @@ Content-Type: application/json
 }
 
 ###
-GET http://localhost:3000/proprietarios
+GET http://localhost:3000/proprietario
 Content-Type: application/json
 
 ###
@@ -16,27 +16,27 @@ GET http://localhost:3000/proprietario
 Content-Type: application/json
 
 ###
-POST http://localhost:3000/veiculos
+POST http://localhost:3000/veiculo
 Content-Type: application/json
 
 {
   "placa": "JDD3987",
   "modelo": "Ferrari",
-  "preco": 800000,
-  "cpfProprietario": "12244678909"
+  "preco": "8000.00",
+  "cpfProprietario": "12345678901"
 }
 
 ###
-GET http://localhost:3000/veiculos
+GET http://localhost:3000/veiculo
 
 ###
-GET http://localhost:3000/veiculos/proprietarios/12244678901
+GET http://localhost:3000/veiculo/proprietario/
 
 ###
-GET http://localhost:3000/veiculos/tipo/Luxo
+GET http://localhost:3000/veiculo/tipo/Luxo
 
 ### 
-PUT http://localhost:3000/veiculos/JKD3987
+PUT http://localhost:3000/veiculo/JKD3987
 Content-Type: application/json
 
 {

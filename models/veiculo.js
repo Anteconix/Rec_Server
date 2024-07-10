@@ -1,6 +1,7 @@
 const { DataTypes } = require('sequelize');
 const sequelize = require('../config/database.js');
 const tipoVeiculo = require('./tipoVeiculo.js');
+const proprietario = require('./proprietario.js')
 
 const veiculo = sequelize.define('Veiculo', {
     placa:{
@@ -12,7 +13,7 @@ const veiculo = sequelize.define('Veiculo', {
         type: DataTypes.STRING,
         allowNull: false
     },
-    perco:{
+    preco:{
         type: DataTypes.FLOAT,
         allowNull: false
     }

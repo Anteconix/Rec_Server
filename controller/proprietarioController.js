@@ -1,4 +1,4 @@
-const Proprietario = require('../models/Proprietario.js');
+const proprietario = require('../models/proprietario.js');
 
 exports.criarProprietario = async (req, res) => {
     try {
@@ -28,7 +28,7 @@ exports.atualizarProprietario = async (req, res) => {
         where: { cpf: req.params.cpf }
       });
       if (atualizou) {
-        const proprietarioAtualizado = await Proprietario.findByPk(req.params.cpf);
+        const proprietarioAtualizado = await proprietario.findByPk(req.params.cpf);
         res.json(proprietarioAtualizado);
       } else {
         res.status(404).json({ erro: 'Proprietário não encontrado' });

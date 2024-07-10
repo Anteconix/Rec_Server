@@ -34,25 +34,25 @@ exports.obterVeiculo = async (req, res) => {
     }
 };
 
-exports.obterVeiculosPorProprietario = async (req, res) => {
+exports.obterveiculoPorProprietario = async (req, res) => {
     try {
-      const veiculos = await veiculo.findAll({
+      const veiculo = await veiculo.findAll({
         where: { cpfProprietario: req.params.cpfProprietario }
       });
-      res.json(veiculos);
+      res.json(veiculo);
     } catch (erro) {
       res.status(400).json({ erro: erro.message });
     }
 };
 
-exports.obterVeiculosPorTipo = async (req, res) => {
+exports.obterveiculoPorTipo = async (req, res) => {
     try {
       const tipoVeiculo = await TipoVeiculo.findOne({ where: { tipo: req.params.tipo } });
       if (tipoVeiculo) {
-        const veiculos = await Veiculo.findAll({
+        const veiculo = await veiculo.findAll({
           where: { idTipo: tipoVeiculo.id }
         });
-        res.json(veiculos);
+        res.json(veiculo);
       } else {
         res.status(404).json({ erro: 'Tipo de veículo não encontrado' });
       }

@@ -4,8 +4,8 @@ const Veiculo = require('../models/veiculo.js');
 
 router.get('/', async (req, res) => {
     try {
-        const veiculos = await Veiculo.findAll();
-        res.json(veiculos);
+        const veiculo = await Veiculo.findAll();
+        res.json(veiculo);
     } catch (err) {
         res.status(500).json({ erro: err.message });
     }
@@ -23,10 +23,10 @@ router.post('/', async (req, res) => {
 router.get('/proprietarios/:cpf', async (req, res) => {
     const cpf = req.params.cpf;
     try {
-        const veiculos = await Veiculo.findAll({
+        const veiculo = await Veiculo.findAll({
             where: { cpfProprietario: cpf }
         });
-        res.json(veiculos);
+        res.json(veiculo);
     } catch (err) {
         console.error('Erro ao buscar veículos por proprietário:', err);
         res.status(500).json({ error: 'Erro ao buscar veículos por proprietário' });
@@ -36,11 +36,11 @@ router.get('/proprietarios/:cpf', async (req, res) => {
 router.get('/tipo/:tipo', (req, res) => {
     const tipo = req.params.tipo; 
    
-    const veiculosDoTipo = [
+    const veiculoDoTipo = [
         { placa: 'ABC1234', modelo: 'Uno' },
     ];
 
-    res.json(veiculosDoTipo);
+    res.json(veiculoDoTipo);
 });
 
 router.put('/:placa', async (req, res) => {

@@ -9,8 +9,8 @@ const PORT = process.env.PORT || 3000;
 
 app.use(bodyParser.json());
 
-app.use('/proprietarios', proprietarioRoutes);
-app.use('/veiculos', veiculoRoutes);
+app.use('/proprietario', proprietarioRoutes);
+app.use('/veiculo', veiculoRoutes);
 
 sequelize.sync()
     .then(() => {
